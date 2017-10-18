@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            A:
+            string str = Console.ReadLine();
+            double a = double.Parse(str);
+            str = Console.ReadLine();
+            double b = double.Parse(str);
+            str = Console.ReadLine();
+            double c = double.Parse(str);
+            if (a-b ==0 && c == 0) { Console.WriteLine("Nie można dzielić przez 0! ");goto A; }
+            else if (c > 0) Console.WriteLine(a * a + b);
+            else if (c < 0) Console.WriteLine(a - b * b);
+            else if (c==0) Console.WriteLine(1/(a-b));
+            Console.ReadKey();
+        }
+    }
+}
