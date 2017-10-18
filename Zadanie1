@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        A:
+            Console.WriteLine("Podaj a: ");
+                string str = Console.ReadLine();
+                float a = float.Parse(str);
+            Console.WriteLine("Podaj b: ");
+            str = Console.ReadLine();
+                float b = float.Parse(str);
+            if (a + b == 0) { Console.WriteLine("Próba dzielenia przez zero! "); goto A; }
+            
+
+                float wynik = (a * a + b) / ((a + b) * (a + b));
+            Console.WriteLine(wynik);
+
+            Console.ReadKey();
+        }
+    }
+}
