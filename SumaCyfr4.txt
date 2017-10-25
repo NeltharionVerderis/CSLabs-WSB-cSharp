@@ -20,8 +20,21 @@ namespace SumaCyfr
             Console.WriteLine(b);
             Console.ReadKey(); */
 
+            /*
             string str = Console.ReadLine();
             uint a = uint.Parse(str);
+            uint b = 0;
+            while (true)
+            {
+                b += a % 10;
+                a /= 10;
+                if (a <= 0) break;
+            }
+            Console.WriteLine(b);
+            Console.ReadKey();
+            */
+
+            uint a = uint.Parse(Console.ReadLine());
             uint b = 0;
             while (true)
             {
