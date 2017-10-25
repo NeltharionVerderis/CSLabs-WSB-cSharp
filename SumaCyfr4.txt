@@ -34,13 +34,24 @@ namespace SumaCyfr
             Console.ReadKey();
             */
 
-            uint a = uint.Parse(Console.ReadLine());
+            uint a;
+            while(true)
+            try
+            {
+                Console.WriteLine("Podaj liczbę: ");
+                a = uint.Parse(Console.ReadLine());
+                    break;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine("Try again? ");
+            }
             uint b = 0;
-            while (true)
+            while (a>0)
             {
                 b += a % 10;
                 a /= 10;
-                if (a <= 0) break;
             }
             Console.WriteLine(b);
             Console.ReadKey();
