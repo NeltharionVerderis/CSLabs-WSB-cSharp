@@ -41,7 +41,7 @@ namespace ConsoleApplication5
                 catch (FormatException)
                 { Console.WriteLine("Wprowadzono Liczbę w złym formacie! "); }
                 catch (OverflowException)
-                { Console.WriteLine("Podana liczba jest za duża! "); }
+                { Console.WriteLine("Podana liczba jest poza zakresem! "); }
                 catch (ArgumentNullException)
                 { Console.WriteLine("Napotkano koniec strumienia! "); }
         }
