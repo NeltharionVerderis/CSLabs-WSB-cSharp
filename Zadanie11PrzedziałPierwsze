@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    class Program
+    {
+        public static bool CzyPierwsza(uint a)
+        {
+            if (a < 2) return false;
+            else if (a == 2) return true;
+
+            else for (uint i = a - 1; i > 1; i--) 
+            {
+                    if (a % i == 0) return false;
+                    else if (i == 2) return true;  
+                           
+            }
+            return false;
+        }
+        public static void PodajLiczby(out uint a, out uint b)
+        {
+            a = 0;
+            b = 0;
+            string str = string.Empty;
+            while (true)
+                try
+                {
+                    Console.WriteLine("Podaj przedział: ");
+                    
+                    
+                    str = Console.ReadLine();
+                    a = uint.Parse(str);
+                    str = Console.ReadLine();
+                    b = uint.Parse(str);
+                    break;
+                }
+                catch (FormatException)
+                { Console.WriteLine("Wprowadzono Liczbę w złym formacie! "); }
+                catch (OverflowException)
+                { Console.WriteLine("Podana liczba jest za duża! "); }
+                catch (ArgumentNullException)
+                { Console.WriteLine("Napotkano koniec strumienia! "); }
+        }
+        static void Main(string[] args)
+        {
+            
+            uint a=0, b=0;
+
+            PodajLiczby(out a,out b);
+
+            for (uint i = a; i <= b; i++)
+            {
+                if (i % 2 != 0) continue;
+                else
+                for (uint j = 2; j < i; j++)
+                {
+                        if (CzyPierwsza(j) && CzyPierwsza(i - j)) { Console.WriteLine("{0} = {1} + {2}", +i, +j, +i - j); break; }
+                }
+
+
+            }
+            Console.ReadKey();
+        }
+        
+    }
+}
