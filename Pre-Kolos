@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            string str;
+            uint a,b,c;
+            A:
+            while (true)
+                
+            try
+                {
+                    Console.WriteLine("Podaj dolną granicę: ");
+                    str = Console.ReadLine();
+                    a = uint.Parse(str);
+                    Console.WriteLine("Podaj górną granicę: ");
+                    str = Console.ReadLine();
+                    b = uint.Parse(str);
+                    break;
+                }
+                catch(FormatException)
+                {
+                    Console.WriteLine("Wprowadzono błędną liczbę! ");
+                }
+            catch(OverflowException)
+                {
+                    Console.WriteLine("Wyjątek Overflow! ");
+                }
+            catch(ArgumentNullException)
+                {
+                    Console.WriteLine("Błędna liczba! ");
+                }
+            if (a > b) { Console.WriteLine("Pierwsza liczba większa od drugiej! "); goto A; }
+            uint suma = 0;
+            
+            for (uint i = a; i < b + 1; i++)
+            {
+                c = i;
+                while (c!=0)
+                {
+                    suma += c % 10;
+                    c /= 10;
+                    
+                }Console.WriteLine("Suma cyfr liczby {0} = {1} ", i ,suma);
+                
+            }
+            
+            Console.ReadKey();
+        }
+    }
+}
