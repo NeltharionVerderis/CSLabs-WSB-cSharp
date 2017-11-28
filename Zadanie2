@@ -10,17 +10,17 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            A:
-            string str = Console.ReadLine();
-            double a = double.Parse(str);
-            str = Console.ReadLine();
-            double b = double.Parse(str);
-            str = Console.ReadLine();
-            double c = double.Parse(str);
-            if (a-b ==0 && c == 0) { Console.WriteLine("Nie można dzielić przez 0! ");goto A; }
-            else if (c > 0) Console.WriteLine(a * a + b);
+            double a, b, c;
+            while (true) { 
+                a = double.Parse(Console.ReadLine());
+                b = double.Parse(Console.ReadLine());
+                c = double.Parse(Console.ReadLine());
+                if (a - b == 0 && c == 0) { Console.WriteLine("Nie można dzielić przez 0! "); }
+                else break;
+                        }
+            if (c > 0) Console.WriteLine(a * a + b);
             else if (c < 0) Console.WriteLine(a - b * b);
-            else if (c==0) Console.WriteLine(1/(a-b));
+            else if (c == 0) Console.WriteLine(1 / (a - b));
             Console.ReadKey();
         }
     }
