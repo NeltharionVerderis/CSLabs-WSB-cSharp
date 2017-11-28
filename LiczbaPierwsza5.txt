@@ -10,24 +10,16 @@ namespace SumaCyfr
     {
         static void Main(string[] args)
         {
-
-            /*  string str = Console.ReadLine();
-              int a = int.Parse(str);
-
-              for (int i = a - 1; i > 1; i--)
-              {
-                  if (a % i == 0) { Console.WriteLine("Liczba podzielna przez: " + i); goto A; }
-
-              }
-              Console.WriteLine("Liczba pierwsza!");
-              A:
-
-              Console.ReadKey(); */
-
-            string str = Console.ReadLine();
-            int a = int.Parse(str);
-
-            for (int i = a - 1; i > 1; i--)
+            uint a;
+            while (true)
+            {
+                if (uint.TryParse(Console.ReadLine(), out a)) break;
+                else Console.WriteLine("Błędna Liczba! ");
+            }
+            if (a == 2) Console.WriteLine("Liczba 2 jest liczbą pierwszą ");
+            else if (a == 0 || a == 1) Console.WriteLine("Liczba {0} nie jest liczbą pierwszą ", +a);
+            else
+            for (uint i = a - 1; i > 1; i--)
             {
                 if (a % i == 0) { Console.WriteLine("Liczba podzielna przez: " + i); break; }
                 if (i == 2) Console.WriteLine("Liczba pierwsza!");
