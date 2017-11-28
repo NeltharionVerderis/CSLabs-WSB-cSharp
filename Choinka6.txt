@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//Program wydaje mi się za długi i raczej powinien być podzielony na osobne funkcje
-//ale pewnie nie będziemy mogli tak pisać jeszcze w tym zadaniu.
 namespace ConsoleApp1
 {
     class Program
@@ -13,8 +11,7 @@ namespace ConsoleApp1
         {
             int linie;
             Console.WriteLine("Wprowadź wysokość : ");
-            string str = Console.ReadLine();
-            linie = Convert.ToInt32(str);
+            linie = Convert.ToInt32(Console.ReadLine());
             int sum = linie - 1;
             for (int i = 0; i < linie; i++)
             {
@@ -22,17 +19,14 @@ namespace ConsoleApp1
                 {
                     Console.Write(" ");
                 }
-
                 for (int x = 0; x < i * 2 + 1; x++)
                 {
-
                     Console.Write("*");
                 }
                 Console.WriteLine();
             }
             int e = 0;
-            
-            while (e!=2)
+            while (e != 2)
             {
                 for (int c = 0; c < sum; c++)
                 {
@@ -40,7 +34,6 @@ namespace ConsoleApp1
                 }
                 Console.WriteLine("|"); e++;
             }
-            
             Console.ReadKey();
         }
     }
