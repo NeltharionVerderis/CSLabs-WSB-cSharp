@@ -10,17 +10,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-        A:
-            Console.WriteLine("Podaj a: ");
-                string str = Console.ReadLine();
-                float a = float.Parse(str);
-            Console.WriteLine("Podaj b: ");
-            str = Console.ReadLine();
-                float b = float.Parse(str);
-            if (a + b == 0) { Console.WriteLine("Próba dzielenia przez zero! "); goto A; }
-            
+            float a, b;
+            while (true)
+            {
+                Console.WriteLine("Podaj a: ");
+                a = float.Parse(Console.ReadLine());
+                Console.WriteLine("Podaj b: ");
+                b = float.Parse(Console.ReadLine());
+                if (a + b == 0) { Console.WriteLine("Próba dzielenia przez zero! "); }
+                else break;
+            }
 
-                float wynik = (a * a + b) / ((a + b) * (a + b));
+            float wynik = (a * a + b) / ((a + b) * (a + b));
             Console.WriteLine(wynik);
 
             Console.ReadKey();
