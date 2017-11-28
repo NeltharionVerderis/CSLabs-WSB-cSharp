@@ -10,45 +10,14 @@ namespace SumaCyfr
     {
         static void Main(string[] args)
         {
-            /* string str = Console.ReadLine();
-            uint a= uint.Parse(str);
-            uint b=0;
-            A:
-            b += a % 10;
-            a /= 10;
-            if (a > 0) goto A;
-            Console.WriteLine(b);
-            Console.ReadKey(); */
-
-            /*
-            string str = Console.ReadLine();
-            uint a = uint.Parse(str);
-            uint b = 0;
+            uint a,b=0;
             while (true)
             {
-                b += a % 10;
-                a /= 10;
-                if (a <= 0) break;
-            }
-            Console.WriteLine(b);
-            Console.ReadKey();
-            */
-
-            uint a;
-            while(true)
-            try
-            {
                 Console.WriteLine("Podaj liczbę: ");
-                a = uint.Parse(Console.ReadLine());
-                    break;
+                if (uint.TryParse(Console.ReadLine(), out a)) break;
+                else Console.WriteLine("Błędna liczba! ");
             }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.WriteLine("Try again? ");
-            }
-            uint b = 0;
-            while (a>0)
+            while (a > 0)
             {
                 b += a % 10;
                 a /= 10;
